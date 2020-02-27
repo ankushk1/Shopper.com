@@ -1,0 +1,825 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body,
+button,
+h2 {
+
+  overflow: auto;
+  transition: 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-image: linear-gradient(to right, #ff758c 20%, #ce6490 80%);
+}
+
+.logo {
+  color: rgb(41, 39, 39);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgb(53, 49, 49);
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 5px;
+  background-color: rgb(226, 226, 226);
+  margin: 3px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+
+
+@media screen and (max-width: 1030px) {
+  body {
+    overflow: hidden;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  html {
+    font-size: 12px;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 50vh;
+    top: 8vh;
+    background: #ff748e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+
+
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.cart,
+.wishlist {
+  display: flexbox;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 3.2cm;
+  height: 2rem;
+  border: none;
+  background-color: rgba(243, 117, 59, 0.884);
+  font-size: 13px;
+  cursor: pointer;
+  margin: 0px 2px;
+  color: rgb(240, 239, 239);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+input[type="text"] {
+  height: 2.1rem;
+  width: 150px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 12px 20px 12px 10px;
+  transition: width 0.4s ease-in-out;
+  border: none;
+  background-color: rgb(235, 226, 226);
+
+}
+
+input[type="text"]:focus {
+  width: 15%;
+}
+
+.intro {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 93%;
+  height: 75vh;
+  margin: 5rem auto;
+  background-image: linear-gradient(to right, #ff758c 0%, #ce6490 100%);
+}
+
+.intro svg {
+  width: 650px;
+  height: 550px;
+  flex: 1 0 50%;
+  margin-top: 2rem;
+}
+
+.info {
+  margin-top: 3rem;
+  text-align: center;
+  flex: 2 0 60%;
+  letter-spacing: 1px;
+}
+
+.centered {
+  font-size: 30px;
+
+  color: rgb(41, 39, 39);
+}
+
+.cd {
+  font-size: 25px;
+  color: rgb(41, 39, 39);
+}
+
+.introbutton {
+  background-color: rgba(243, 117, 59, 0.884);
+  width: 3.5cm;
+  height: 1cm;
+  border-radius: 5%;
+  border: none;
+  color: white;
+  font-size: 13px;
+  margin-top: 3rem;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+
+}
+
+.thumbnails {
+  margin: 2.5cm auto;
+  display: flex;
+  width: 93%;
+  justify-content: space-between;
+
+}
+
+.men {
+  background: url('./images/close-up-face-fashion-fine-looking-450212.jpg');
+  background-size: cover;
+  width: 480px;
+  height: 350px;
+  position: relative;
+
+}
+
+.women {
+
+  background: url('./images/woman-holding-two-white-and-beige-shopping-paper-bags-in-974911.jpg');
+  background-size: cover;
+  width: 480px;
+  height: 350px;
+  position: relative;
+
+}
+
+.kids {
+
+  background: url('./images/people-girl-design-happy-35188.jpg');
+  background-size: cover;
+  width: 480px;
+  height: 350px;
+  position: relative;
+
+}
+
+.thumbnails {
+  overflow: auto !important;
+}
+
+.thumbnails p {
+  color: #302e2e;
+  font-size: 25px;
+  position: absolute;
+  padding: 7px 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  background-color: rgb(214, 213, 212);
+  text-shadow: rgb(53, 49, 49);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+#c7,
+#c5,
+#c6 {
+  animation: gfloat 1.5s ease-in-out infinite alternate;
+}
+
+#box1 {
+  padding-bottom: 13rem;
+  animation: spin 1.5s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+
+
+@keyframes gfloat {
+  form {
+    transform: rotateX(0deg);
+  }
+
+  to {
+    transform: rotateX(18deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+
+.caros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3cm auto;
+  width: 93%;
+}
+
+.caros2 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3cm auto;
+  width: 93%;
+}
+
+.ban-image {
+  margin-right: 2cm;
+}
+
+.banr-image {
+  margin-left: 2cm;
+}
+
+.owl-carousel {
+  overflow: hidden;
+}
+
+.owl-carousel img {
+  margin-top: 3cm;
+
+  cursor: pointer;
+}
+
+.item {
+  height: 500px;
+  width: 400px;
+  margin: 0px;
+}
+
+.item {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.item .btn,
+.btn1,
+.btn2 {
+  position: absolute;
+  top: 94%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(31, 161, 161);
+  color: white;
+  font-size: 13px;
+  padding: 5px 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.item .btn1 {
+  top: 94%;
+  left: 25%;
+  background-color: rgb(179, 106, 93);
+}
+
+.item .btn2 {
+
+  top: 5%;
+  left: 87%;
+  background-color: rgb(186, 252, 252);
+  color: black;
+  font-size: 18px;
+  padding: 2px 4px;
+  cursor: default;
+
+}
+
+.premium {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 93%;
+  height: 85vh;
+  margin: 5rem auto;
+  margin-bottom: 1.5rem;
+  background-image: linear-gradient(135deg, #939aa3 0%, rgb(48, 47, 49) 100%);
+  scroll-behavior: smooth;
+
+}
+
+.p-active {
+  background-color: rgb(199, 216, 223);
+
+
+}
+
+.premium svg {
+  flex: 1 0;
+  width: 600px;
+  height: 600px;
+  margin: 4rem 2rem 60%;
+}
+
+.fas,
+.far {
+  margin-right: 5px;
+}
+
+.perks h2 {
+  color: rgb(228, 199, 39);
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  font-size: 35px;
+  text-align: center;
+}
+
+.perks p {
+
+  color: rgb(223, 197, 53);
+  text-align: left;
+  flex: 2 0 40%;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.prembutn {
+  background-color: rgba(243, 117, 59, 0.884);
+  width: 4.5cm;
+  height: 1cm;
+  border-radius: 5%;
+  border: none;
+  color: white;
+  font-size: 13px;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+
+}
+
+.footer {
+  font-size: 18px;
+  overflow: auto !important;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 93%;
+  height: 30vh;
+  font-weight: 600;
+  margin: 2rem auto;
+  color: rgb(240, 232, 232);
+  margin-bottom: 0px;
+  background-image: linear-gradient(to right, #bbb7b7 0%, rgb(46, 42, 42) 40%, black 100%);
+
+}
+
+.footer svg {
+
+  text-decoration: none;
+  width: 200px;
+  height: 200px;
+  margin: 0rem 2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-decoration: none;
+}
+
+.footer-links a {
+  text-decoration: none;
+  margin-bottom: 1rem;
+  color: rgb(238, 232, 232);
+
+
+}
+
+
+.contactus {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  justify-content: space-around;
+}
+
+#FB,
+#Tw,
+#Insta {
+  animation: wheel 4s ease infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+  size: 2rem;
+  cursor: pointer;
+  color: white;
+
+}
+
+#cwheel1,
+#cwheel2 {
+  animation: wheel 2s ease infinite reverse;
+  transform-origin: center;
+  transform-box: fill-box;
+  size: 2rem;
+  cursor: pointer;
+  color: white;
+
+}
+
+
+.cartt {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.cartt svg {
+  width: 600px;
+  height: 770px;
+}
+
+@keyframes wheel {
+  form {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+#girl {
+  animation: gfloat 1s ease-in-out infinite alternate;
+}
+
+@keyframes gfloat {
+  form {
+    transform: rotateX(0deg);
+  }
+
+  to {
+    transform: rotateX(15deg);
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 1230px) {
+  body {
+    width: 100%;
+    overflow: auto;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .intro {
+    margin: 1.5rem auto;
+    width: 85%;
+    height: 50vh;
+    align-items: center;
+    background-color: #ff748e;
+    height: fit-content;
+  }
+
+  .intro svg {
+    width: 450px;
+    height: 450px;
+    flex: 1 0 50%;
+  }
+
+  .men,
+  .women,
+  .kids {
+    width: 350px;
+    height: 200px;
+  }
+
+  .thumbnails p {
+
+    font-size: 15px;
+    position: absolute;
+    padding: 7px 10px;
+  }
+
+  .ban-image img,
+  .banr-image img {
+    width: 400px;
+    height: 650px;
+  }
+
+  .item .btn,
+  .btn1,
+  .btn2 {
+    padding: 0px, 7px;
+    font-size: 13px;
+  }
+
+  .item img {
+    width: 200px;
+  }
+
+  .premium{
+    overflow: auto !important;
+    height: 60vh;
+  }
+  .premium svg {
+    width: 400px;
+    height: 350px;
+    flex: 1 0 50%;
+  }
+
+  .info {
+    margin-top: 0px;
+    text-align: center;
+    flex: 2 0 60%;
+    margin-left: 3rem;
+
+    letter-spacing: 0px;
+  }
+
+  .centered {
+    margin-top: 3rem;
+    font-size: 22px;
+  }
+
+  .cd {
+    font-size: 15px;
+  }
+
+  .introbutton {
+    background-color: rgba(243, 117, 59, 0.884);
+    width: 3cm;
+    height: 1cm;
+    border-radius: 5%;
+    border: none;
+    color: white;
+    font-size: 13px;
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+
+  .prembutn {
+    background-color: rgba(243, 117, 59, 0.884);
+    width: 4cm;
+    height: 1cm;
+    border-radius: 5%;
+    border: none;
+    color: white;
+    font-size: 13px;
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+
+  .perks h2 {
+    font-size: 25px;
+  }
+
+  .perks p {
+    font-size: 15px;
+  }
+
+  .footer svg {
+    width: 150px;
+    height: 130px;
+  }
+
+  .footer {
+    width: 100%;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+
+  .intro {
+    margin-top: 2rem;
+    width: 100%;
+    background-color: #ff748e;
+    height: 80vh;
+  }
+
+  .intro svg,
+  .premium svg {
+    width: 350px;
+    height: 270px;
+    flex: 1 0 50%;
+  }
+
+  .men,
+  .women,
+  .kids {
+    width: 300px;
+    height: 150px;
+  }
+
+  .item .btn,
+  .btn1 {
+    padding: 0px, 0px;
+    font-size: 10px;
+  }
+
+  .item .btn2 {
+    font-size: 10px;
+  }
+
+  .ban-image img,
+  .banr-image img {
+    width: 300px;
+    height: 500px;
+  }
+
+  .item img {
+    width: 200px;
+  }
+
+  .thumbnails p {
+
+    font-size: 10px;
+    position: absolute;
+    padding: 7px 7px;
+  }
+
+  .premium {
+    overflow: hidden;
+  }
+
+  .info {
+    margin-top: 0px;
+    text-align: center;
+    flex: 2 0 60%;
+    margin-left: 3rem;
+    letter-spacing: 0px;
+  }
+
+
+  .cd {
+    font-size: 15px;
+  }
+
+  .introbutton {
+    background-color: rgba(243, 117, 59, 0.884);
+    width: 2.5cm;
+    height: 0.8cm;
+    border-radius: 5%;
+    border: none;
+    color: white;
+    font-size: 10px;
+    margin-top: 0em;
+    cursor: pointer;
+    text-overflow: ellipsis;
+
+  }
+
+  .prembutn {
+    background-color: rgba(243, 117, 59, 0.884);
+    width: 3.5cm;
+    height: 0.8cm;
+    border-radius: 5%;
+    border: none;
+    color: white;
+    font-size: 10px;
+    margin-top: 1rem;
+    cursor: pointer;
+
+  }
+
+  .perks h2 {
+    font-size: 15px;
+  }
+
+  .perks p {
+    font-size: 13px;
+  }
+
+  .footer svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer {
+    width: 95%;
+    font-size: 11px;
+    margin-bottom: 2rem;
+
+  }
+
+  .footer-links a {
+    margin-bottom: 0px;
+  }
+}
